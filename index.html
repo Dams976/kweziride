@@ -136,15 +136,11 @@
       background:var(--sun); flex-shrink:0;
       box-shadow:0 0 0 3px rgba(245,130,10,.2);
     }
-    .booking-line-sep {
-      width:1px; height:20px; background:rgba(255,255,255,.15);
-      margin-left:5px; margin-bottom:0;
-    }
     .booking-input {
       background:transparent; border:none; outline:none;
       font-family:'Plus Jakarta Sans', sans-serif;
       font-size:15px; font-weight:600; color:var(--white);
-      width:100%; placeholder-color:rgba(255,255,255,.35);
+      width:100%;
     }
     .booking-input::placeholder { color:rgba(255,255,255,.35); font-weight:500; }
     .booking-sep {
@@ -249,8 +245,6 @@
     }
     .step-card:hover { transform:translateY(-7px); box-shadow:0 24px 56px rgba(30,127,212,.13); border-color:var(--ocean); }
     .step-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--ocean), var(--sun)); }
-
-    /* Big visible step number */
     .step-num {
       font-family:'Unbounded', sans-serif; font-weight:900;
       font-size:56px; line-height:1;
@@ -289,7 +283,6 @@
     .av-title { font-family:'Unbounded', sans-serif; font-size:14px; font-weight:700; color:var(--white); margin-bottom:5px; }
     .av-desc { font-size:14px; color:rgba(255,255,255,.6); line-height:1.65; }
 
-    /* Stats grid — replaced note moyenne */
     .stats-grid { display:flex; flex-direction:column; gap:16px; }
     .stat-card {
       background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09);
@@ -313,7 +306,6 @@
     #chauffeurs { padding:100px 5%; background:var(--white); }
     .chauffeurs-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 
-    /* Visual: driver profile card instead of earnings */
     .driver-visual {
       background:var(--night); border-radius:24px; padding:32px;
       border:1.5px solid rgba(255,255,255,.07);
@@ -382,7 +374,6 @@
     #download p { color:rgba(255,255,255,.7); font-size:16px; margin:18px 0 40px; position:relative; line-height:1.75; }
     .download-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
 
-    /* Real store badges via SVG inline */
     .store-btn {
       display:inline-flex; align-items:center; gap:14px;
       padding:14px 28px; border-radius:14px;
@@ -469,8 +460,6 @@
           KweziRide, c'est ta voiture à la demande — simple, locale, fiable.
           Où que tu sois sur l'île, un chauffeur mahorais est près de toi.
         </p>
-
-        <!-- Booking widget -->
         <div class="booking-widget">
           <div class="booking-widget-title">🚗 Commander une course</div>
           <div class="booking-field">
@@ -490,12 +479,8 @@
             <span>💰</span> Voir les prix disponibles
           </button>
         </div>
-
-        <a href="#chauffeurs" class="hero-outline-link">
-          🚗 Devenir chauffeur →
-        </a>
+        <a href="#chauffeurs" class="hero-outline-link">🚗 Devenir chauffeur →</a>
       </div>
-
       <div class="hero-phone">
         <div class="phone-shell">
           <div class="phone-notch"></div>
@@ -602,8 +587,6 @@
   <!-- CHAUFFEURS -->
   <section id="chauffeurs">
     <div class="chauffeurs-inner">
-
-      <!-- Driver onboarding visual (replaces earnings chart) -->
       <div class="driver-visual">
         <div class="dv-header">
           <div class="dv-avatar">K</div>
@@ -614,25 +597,12 @@
         </div>
         <div style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">Comment rejoindre la flotte</div>
         <div class="dv-steps">
-          <div class="dv-step">
-            <div class="dv-step-num">1</div>
-            <div class="dv-step-text">Je remplis le formulaire d'inscription</div>
-          </div>
-          <div class="dv-step">
-            <div class="dv-step-num">2</div>
-            <div class="dv-step-text">Mon dossier est vérifié par l'équipe</div>
-          </div>
-          <div class="dv-step">
-            <div class="dv-step-num">3</div>
-            <div class="dv-step-text">Je télécharge l'app et je commence</div>
-          </div>
-          <div class="dv-step">
-            <div class="dv-step-num">4</div>
-            <div class="dv-step-text">Je roule à mon rythme et je gagne</div>
-          </div>
+          <div class="dv-step"><div class="dv-step-num">1</div><div class="dv-step-text">Je remplis le formulaire d'inscription</div></div>
+          <div class="dv-step"><div class="dv-step-num">2</div><div class="dv-step-text">Mon dossier est vérifié par l'équipe</div></div>
+          <div class="dv-step"><div class="dv-step-num">3</div><div class="dv-step-text">Je télécharge l'app et je commence</div></div>
+          <div class="dv-step"><div class="dv-step-num">4</div><div class="dv-step-text">Je roule à mon rythme et je gagne</div></div>
         </div>
       </div>
-
       <div>
         <span class="section-label">Pour les chauffeurs</span>
         <h2 class="section-title">Toi au volant.<br>Toi qui décides.</h2>
@@ -658,8 +628,6 @@
     <h2 class="section-title" style="font-size:clamp(22px,3vw,38px);position:relative;color:var(--white);">KweziRide est disponible maintenant</h2>
     <p>Télécharge l'app, crée ton compte en 2 minutes et commande ton premier trajet.<br>L'appli VTC de Mayotte — simple, locale, fiable.</p>
     <div class="download-btns">
-
-      <!-- Apple App Store badge SVG -->
       <a href="#" class="store-btn">
         <svg class="store-logo" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.25 4.5C15.25 4.5 16.75 2 19.5 2C19.5 5 17 6.5 15.25 4.5Z" fill="white"/>
@@ -670,8 +638,6 @@
           <div class="store-name">App Store</div>
         </div>
       </a>
-
-      <!-- Google Play badge SVG -->
       <a href="#" class="store-btn">
         <svg class="store-logo" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
           <path d="M5.5 3.2L17.6 15L5.5 26.8C5.2 26.5 5 26 5 25.4V4.6C5 4 5.2 3.5 5.5 3.2Z" fill="#00D2FF"/>
@@ -684,7 +650,6 @@
           <div class="store-name">Google Play</div>
         </div>
       </a>
-
     </div>
   </section>
 
@@ -724,21 +689,20 @@
       <div class="footer-col">
         <h4>Légal</h4>
         <ul>
-          <li><a href="#">CGU</a></li>
-          <li><a href="#">Confidentialité</a></li>
-          <li><a href="#">Mentions légales</a></li>
+          <li><a href="KweziRide_CGU.html">CGU</a></li>
+          <li><a href="KweziRide_Conditions_Chauffeurs.html">Confidentialité</a></li>
+          <li><a href="KweziRide_Mentions_Legales.html">Mentions légales</a></li>
           <li><a href="#">Cookies</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 KweziRide · Tous droits réservés · Mayotte, 976</span>
+      <span class="footer-copy">© 2026 KweziRide · Tous droits réservés · Mayotte, 976</span>
       <span class="footer-made">Fait avec <em>♥</em> à Mayotte</span>
     </div>
   </footer>
 
   <script>
-    // Twinkling stars
     const container = document.getElementById('stars');
     for (let i = 0; i < 45; i++) {
       const s = document.createElement('div');
