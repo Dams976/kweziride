@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recrutement Chauffeurs — KweziRide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ocean:#1E7FD4;--ocean-deep:#155fa0;--sun:#F5820A;--sun-light:#FFF0DC;--coral:#E8400A;--night:#0A0A0A;--muted:#4A5A6E;--fog:#E2EAF4;--white:#FAFCFF;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--night);overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);}
+    .nav-logo img{height:64px;width:auto;display:block;}
+    .nav-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:rgba(255,255,255,.6);transition:color .2s;}
+    .nav-back:hover{color:var(--sun);}
+    .nav-cta{padding:10px 22px;border-radius:30px;background:var(--sun);color:#fff;font-weight:700;font-size:14px;}
+
+    .hero{min-height:420px;background:var(--night);display:flex;align-items:center;padding:140px 5% 80px;position:relative;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 65% 50%,rgba(30,127,212,.28) 0%,transparent 70%),radial-gradient(ellipse 50% 70% at 15% 85%,rgba(245,130,10,.13) 0%,transparent 60%);}
+    .hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;width:100%;text-align:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:30px;background:rgba(245,130,10,.14);border:1px solid rgba(245,130,10,.3);color:var(--sun);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:24px;}
+    .hero-title{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(26px,4vw,48px);color:var(--white);margin-bottom:16px;}
+    .hero-title em{font-style:normal;background:linear-gradient(90deg,var(--sun),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero-sub{font-size:16px;line-height:1.75;color:rgba(255,255,255,.58);}
+
+    .content{max-width:900px;margin:0 auto;padding:80px 5%;}
+    .section-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--ocean);margin-bottom:12px;}
+    .section-title{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.5vw,32px);color:var(--night);margin-bottom:20px;letter-spacing:-1px;}
+
+    .perks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:32px 0;}
+    .perk-card{background:var(--sun-light);border-radius:18px;padding:24px;transition:transform .2s;}
+    .perk-card:hover{transform:translateY(-3px);}
+    .perk-icon{font-size:28px;margin-bottom:10px;}
+    .perk-title{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--night);margin-bottom:6px;}
+    .perk-desc{font-size:14px;color:var(--muted);line-height:1.6;}
+
+    .steps-block{background:var(--night);border-radius:24px;padding:40px;margin:48px 0;}
+    .steps-title{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:28px;}
+    .step-row{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+    .step-row:last-child{margin-bottom:0;}
+    .step-num{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--ocean),var(--sun));font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-text{font-size:15px;font-weight:600;color:rgba(255,255,255,.8);padding-top:6px;}
+
+    .cta-block{text-align:center;padding:48px 40px;background:linear-gradient(135deg,var(--ocean),var(--ocean-deep));border-radius:24px;}
+    .cta-title{font-family:'Unbounded',sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:900;color:#fff;margin-bottom:12px;}
+    .cta-sub{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.7;}
+    .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{padding:15px 30px;border-radius:40px;background:linear-gradient(135deg,var(--sun),var(--coral));color:#fff;font-weight:800;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,130,10,.4);}
+    .btn-whatsapp{padding:14px 24px;border-radius:40px;border:2px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:border-color .2s;}
+    .btn-whatsapp:hover{border-color:#fff;}
+
+    footer{background:var(--night);padding:40px 5%;border-top:1px solid rgba(255,255,255,.06);text-align:center;}
+    .footer-copy{font-size:13px;color:rgba(255,255,255,.28);}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;}
+    .footer-links a{font-size:13px;color:rgba(255,255,255,.42);transition:color .2s;}
+    .footer-links a:hover{color:var(--sun);}
+
+    @media(max-width:600px){.perks-grid{grid-template-columns:1fr;}}
+  </style>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><img src="ChatGPT_Image_1_mars_2026__21_18_18.png" alt="KweziRide"></div>
+    <a href="index.html" class="nav-back">← Retour à l'accueil</a>
+    <a href="index.html#download" class="nav-cta">Télécharger</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">🚗 Rejoins la flotte</div>
+      <h1 class="hero-title">Toi au volant,<br><em>toi qui décides.</em></h1>
+      <p class="hero-sub">Deviens chauffeur KweziRide — inscription gratuite, horaires libres, revenus transparents. L'aventure commence à Mayotte.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <span class="section-label">Pourquoi nous rejoindre</span>
+    <h2 class="section-title">Les avantages chauffeur KweziRide</h2>
+    <div class="perks-grid">
+      <div class="perk-card"><div class="perk-icon">🕐</div><div class="perk-title">Horaires 100% libres</div><div class="perk-desc">Matin, soir, week-end — tu travailles quand tu veux, autant que tu veux.</div></div>
+      <div class="perk-card"><div class="perk-icon">💵</div><div class="perk-title">Revenus transparents</div><div class="perk-desc">Tu sais exactement ce que tu gagnes sur chaque course. Aucune mauvaise surprise.</div></div>
+      <div class="perk-card"><div class="perk-icon">📲</div><div class="perk-title">App simple en français</div><div class="perk-desc">Interface intuitive, conçue pour être facile à prendre en main dès le premier jour.</div></div>
+      <div class="perk-card"><div class="perk-icon">🤝</div><div class="perk-title">Équipe locale</div><div class="perk-desc">Tu n'es pas seul — notre équipe mahoraise est là pour t'accompagner à chaque étape.</div></div>
+      <div class="perk-card"><div class="perk-icon">🎓</div><div class="perk-title">Inscription gratuite</div><div class="perk-desc">Pas de frais d'entrée. Tu t'inscris, on vérifie ton dossier, et tu commences.</div></div>
+      <div class="perk-card"><div class="perk-icon">🌊</div><div class="perk-title">Première plateforme mahoraise</div><div class="perk-desc">Fais partie des pionniers — rejoins la première plateforme VTC de Mayotte.</div></div>
+    </div>
+
+    <div class="steps-block">
+      <div class="steps-title">Comment rejoindre la flotte ?</div>
+      <div class="step-row"><div class="step-num">1</div><div class="step-text">Tu contactes l'équipe KweziRide par WhatsApp ou email</div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-text">Tu envoies ton permis de conduire et pièce d'identité</div></div>
+      <div class="step-row"><div class="step-num">3</div><div class="step-step-text" style="font-size:15px;font-weight:600;color:rgba(255,255,255,.8);padding-top:6px;">Ton dossier est vérifié par notre équipe (sous 48h)</div></div>
+      <div class="step-row"><div class="step-num">4</div><div class="step-text">Tu télécharges l'app chauffeur et tu commences à rouler</div></div>
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-title">Prêt à rejoindre KweziRide ?</div>
+      <p class="cta-sub">Contacte-nous maintenant — l'inscription est rapide, gratuite, et tu peux commencer très vite.</p>
+      <div class="btn-group">
+        <a href="#tally-open=68x1Rk&tally-layout=modal&tally-width=390&tally-align-left=1&tally-emoji-animation=head-shake" class="btn-primary">🚗 Postuler maintenant</a>
+        <a href="https://wa.me/262639594307" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="KweziRide_Conditions_Chauffeurs.html">Conditions chauffeurs</a>
+      <a href="KweziRide_CGU.html">CGU</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 KweziRide · Tous droits réservés · Mayotte, 976</p>
+  </footer>
+</body>
+</html>
