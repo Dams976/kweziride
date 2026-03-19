@@ -1,0 +1,22 @@
+{
+  "name": "KweziRide",
+  "short_name": "KweziRide",
+  "description": "L'application VTC de Mayotte — simple, locale, fiable.",
+  "start_url": "/kweziride/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#F5820A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "ChatGPT_Image_1_mars_2026__21_18_18.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "ChatGPT_Image_1_mars_2026__21_18_18.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

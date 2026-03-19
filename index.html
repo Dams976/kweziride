@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KweziRide — Connecter les trajets, rapprocher les gens</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#F5820A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KweziRide">
+  <link rel="apple-touch-icon" href="ChatGPT_Image_1_mars_2026__21_18_18.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -830,6 +838,15 @@
   </footer>
 
   <script>
+    // Service Worker PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log('KweziRide PWA prête !'))
+          .catch(e => console.log('SW error:', e));
+      });
+    }
+
     // GPS — détection position actuelle
     function getGPS() {
       const input = document.getElementById('depart-input');
