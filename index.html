@@ -485,7 +485,14 @@
           <div class="booking-widget-title">🚗 Commander une course</div>
           <div class="booking-field">
             <div class="booking-dot-green"></div>
-            <input class="booking-input" type="text" placeholder="Lieu de prise en charge…">
+            <input class="booking-input" id="depart-input" type="text" placeholder="Lieu de prise en charge…">
+            <button onclick="getGPS()" title="Utiliser ma position" style="background:none;border:none;cursor:pointer;padding:4px;border-radius:8px;transition:background .2s;flex-shrink:0;" onmouseover="this.style.background='rgba(46,204,113,.15)'" onmouseout="this.style.background='none'">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke-opacity=".3"/>
+              </svg>
+            </button>
           </div>
           <div class="booking-sep">
             <div class="booking-sep-line"></div>
@@ -805,6 +812,40 @@
   </footer>
 
   <script>
+    // GPS — détection position actuelle
+    function getGPS() {
+      const input = document.getElementById('depart-input');
+      if (!navigator.geolocation) {
+        input.placeholder = "GPS non disponible sur ce navigateur";
+        return;
+      }
+      input.value = "";
+      input.placeholder = "📡 Localisation en cours…";
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          const { latitude, longitude } = pos.coords;
+          try {
+            // Reverse geocoding via API gratuite
+            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&accept-language=fr`);
+            const data = await res.json();
+            const adresse = data.display_name
+              ? data.display_name.split(',').slice(0,3).join(', ')
+              : `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+            input.value = adresse;
+            input.placeholder = "Lieu de prise en charge…";
+          } catch {
+            input.value = `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+            input.placeholder = "Lieu de prise en charge…";
+          }
+        },
+        (err) => {
+          input.placeholder = "Localisation refusée — entre ton adresse";
+        },
+        { timeout: 8000, enableHighAccuracy: true }
+      );
+    }
+
+    // Twinkling stars
     const container = document.getElementById('stars');
     for (let i = 0; i < 45; i++) {
       const s = document.createElement('div');
