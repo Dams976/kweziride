@@ -445,7 +445,27 @@
       to{opacity:1;transform:translateY(0);}
     }
 
-    @media(max-width:900px){
+    /* Popup installation iOS */
+    .ios-popup {
+      display:none; position:fixed; inset:0; z-index:999;
+      background:rgba(0,0,0,.7); backdrop-filter:blur(6px);
+      align-items:flex-end; justify-content:center;
+    }
+    .ios-popup.active { display:flex; }
+    .ios-popup-inner {
+      background:#1a1a2e; border-radius:24px 24px 0 0;
+      padding:28px 24px 40px; width:100%; max-width:480px;
+      border-top:1px solid rgba(255,255,255,.1);
+      animation:slideUp .3s ease;
+    }
+    @keyframes slideUp { from{transform:translateY(100%);} to{transform:translateY(0);} }
+    .ios-popup-title { font-family:'Unbounded',sans-serif; font-size:16px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .ios-popup-sub { font-size:13px; color:rgba(255,255,255,.5); margin-bottom:24px; }
+    .ios-step { display:flex; align-items:center; gap:14px; padding:14px; background:rgba(255,255,255,.05); border-radius:14px; margin-bottom:10px; }
+    .ios-step-num { width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--ocean),var(--sun)); font-family:'Unbounded',sans-serif; font-size:13px; font-weight:900; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .ios-step-text { font-size:14px; font-weight:600; color:rgba(255,255,255,.85); }
+    .ios-step-icon { font-size:20px; margin-left:auto; }
+    .ios-popup-close { width:100%; margin-top:16px; padding:14px; border-radius:12px; background:rgba(255,255,255,.08); border:none; color:rgba(255,255,255,.6); font-size:14px; font-weight:600; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
       .hero-inner{grid-template-columns:1fr;}
       .hero-phone{display:none;}
       .steps-grid{grid-template-columns:1fr;}
@@ -770,6 +790,54 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- Popup installation iOS -->
+  <div class="ios-popup" id="ios-popup" onclick="if(event.target===this)closeIOSPopup()">
+    <div class="ios-popup-inner">
+      <div class="ios-popup-title">📱 Installer KweziRide sur iPhone</div>
+      <p class="ios-popup-sub">3 étapes simples depuis Safari</p>
+      <div class="ios-step">
+        <div class="ios-step-num">1</div>
+        <div class="ios-step-text">Appuie sur le bouton <strong>Partager</strong> en bas de Safari</div>
+        <div class="ios-step-icon">⬆️</div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">2</div>
+        <div class="ios-step-text">Fais défiler et appuie sur <strong>"Sur l'écran d'accueil"</strong></div>
+        <div class="ios-step-icon">➕</div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">3</div>
+        <div class="ios-step-text">Appuie sur <strong>"Ajouter"</strong> en haut à droite</div>
+        <div class="ios-step-icon">✅</div>
+      </div>
+      <button class="ios-popup-close" onclick="closeIOSPopup()">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Popup installation Android -->
+  <div class="ios-popup" id="android-popup" onclick="if(event.target===this)closeAndroidPopup()">
+    <div class="ios-popup-inner">
+      <div class="ios-popup-title">🤖 Installer KweziRide sur Android</div>
+      <p class="ios-popup-sub">2 étapes simples depuis Chrome</p>
+      <div class="ios-step">
+        <div class="ios-step-num">1</div>
+        <div class="ios-step-text">Appuie sur les <strong>3 points</strong> en haut à droite de Chrome</div>
+        <div class="ios-step-icon">⋮</div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">2</div>
+        <div class="ios-step-text">Appuie sur <strong>"Ajouter à l'écran d'accueil"</strong></div>
+        <div class="ios-step-icon">➕</div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">3</div>
+        <div class="ios-step-text">Appuie sur <strong>"Installer"</strong> et c'est bon !</div>
+        <div class="ios-step-icon">✅</div>
+      </div>
+      <button class="ios-popup-close" onclick="closeAndroidPopup()">Fermer</button>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-inner">
       <div>
@@ -846,19 +914,25 @@
 
     function installPWA() {
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const isAndroid = /Android/.test(navigator.userAgent);
       if (isIOS) {
-        alert("Pour installer KweziRide sur iPhone :\n1. Appuie sur le bouton Partager (carré avec flèche) en bas de Safari\n2. Puis « Sur l'écran d'accueil »\n3. Appuie sur « Ajouter » ✅");
-      } else if (deferredPrompt) {
+        document.getElementById('ios-popup').classList.add('active');
+      } else if (isAndroid && deferredPrompt) {
         deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((result) => {
-          if (result.outcome === 'accepted') {
-            console.log('KweziRide installée !');
-          }
-          deferredPrompt = null;
-        });
+        deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+      } else if (isAndroid) {
+        document.getElementById('android-popup').classList.add('active');
       } else {
-        alert("Pour installer KweziRide :\n- Sur Android : ouvre le menu Chrome (3 points) → « Ajouter à l'écran d'accueil »\n- Sur iPhone : Partager → « Sur l'écran d'accueil »");
+        document.getElementById('android-popup').classList.add('active');
       }
+    }
+
+    function closeIOSPopup() {
+      document.getElementById('ios-popup').classList.remove('active');
+    }
+
+    function closeAndroidPopup() {
+      document.getElementById('android-popup').classList.remove('active');
     }
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
