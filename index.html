@@ -981,20 +981,20 @@
   <script>
     // PWA Install prompt
     let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
+    window.addEventListener('beforeinstallprompt', function(e) {
       e.preventDefault();
       deferredPrompt = e;
     });
 
     function installPWA() {
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      const isAndroid = /Android/.test(navigator.userAgent);
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      var isAndroid = /Android/.test(navigator.userAgent);
       if (isIOS) {
         document.getElementById('ios-popup').classList.add('active');
       } else if (isAndroid) {
         if (deferredPrompt) {
           deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+          deferredPrompt.userChoice.then(function() { deferredPrompt = null; });
         }
         document.getElementById('android-popup').classList.add('active');
       } else {
@@ -1010,57 +1010,54 @@
       document.getElementById('android-popup').classList.remove('active');
     }
 
-    // Service Worker PWA
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
+      window.addEventListener('load', function() {
         navigator.serviceWorker.register('sw.js')
-          .then(() => console.log('KweziRide PWA prête !'))
-          .catch(e => console.log('SW error:', e));
+          .then(function() { console.log('KweziRide PWA prete !'); })
+          .catch(function(e) { console.log('SW error:', e); });
       });
     }
 
-    // GPS — détection position actuelle
     function getGPS() {
-      const input = document.getElementById('depart-input');
+      var input = document.getElementById('depart-input');
       if (!navigator.geolocation) {
         input.placeholder = "GPS non disponible sur ce navigateur";
         return;
       }
       input.value = "";
-      input.placeholder = "📡 Localisation en cours…";
+      input.placeholder = "Localisation en cours...";
       navigator.geolocation.getCurrentPosition(
-        async (pos) => {
-          const { latitude, longitude } = pos.coords;
-          try {
-            // Reverse geocoding via API gratuite
-            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&accept-language=fr`);
-            const data = await res.json();
-            const adresse = data.display_name
-              ? data.display_name.split(',').slice(0,3).join(', ')
-              : `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
-            input.value = adresse;
-            input.placeholder = "Lieu de prise en charge…";
-          } catch {
-            input.value = `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
-            input.placeholder = "Lieu de prise en charge…";
-          }
+        function(pos) {
+          var latitude = pos.coords.latitude;
+          var longitude = pos.coords.longitude;
+          fetch('https://nominatim.openstreetmap.org/reverse?lat=' + latitude + '&lon=' + longitude + '&format=json&accept-language=fr')
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              var adresse = data.display_name
+                ? data.display_name.split(',').slice(0,3).join(', ')
+                : latitude.toFixed(5) + ', ' + longitude.toFixed(5);
+              input.value = adresse;
+              input.placeholder = "Lieu de prise en charge...";
+            })
+            .catch(function() {
+              input.value = latitude.toFixed(5) + ', ' + longitude.toFixed(5);
+              input.placeholder = "Lieu de prise en charge...";
+            });
         },
-        (err) => {
-          input.placeholder = "Localisation refusée — entre ton adresse";
+        function(err) {
+          input.placeholder = "Localisation refusee - entre ton adresse";
         },
         { timeout: 8000, enableHighAccuracy: true }
       );
     }
 
-    // Twinkling stars
-    const container = document.getElementById('stars');
-    for (let i = 0; i < 45; i++) {
-      const s = document.createElement('div');
+    var container = document.getElementById('stars');
+    for (var i = 0; i < 45; i++) {
+      var s = document.createElement('div');
       s.className = 'star';
-      const size = Math.random() * 3 + 1;
-      s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
+      var size = Math.random() * 3 + 1;
+      s.style.cssText = 'width:' + size + 'px;height:' + size + 'px;top:' + (Math.random()*100) + '%;left:' + (Math.random()*100) + '%;animation-delay:' + (Math.random()*4) + 's;animation-duration:' + (2+Math.random()*3) + 's;';
       container.appendChild(s);
     }
-  </script>
-</body>
+  </script></body>
 </html>
