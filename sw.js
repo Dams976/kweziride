@@ -1,4 +1,4 @@
-const CACHE = 'kweziride-v1';
+const CACHE = 'kweziride-v2';
 const FILES = [
   '/kweziride/',
   '/kweziride/index.html',
