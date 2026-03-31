@@ -1009,6 +1009,9 @@
     function closeAndroidPopup() {
       document.getElementById('android-popup').classList.remove('active');
     }
+
+    // Service Worker PWA
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
           .then(() => console.log('KweziRide PWA prête !'))
