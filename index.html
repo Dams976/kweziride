@@ -487,6 +487,10 @@
       .footer-inner{grid-template-columns:1fr;}
       .btn-whatsapp{margin-left:0;margin-top:12px;}
     }
+    @media(max-width:768px){
+      .packs-grid{grid-template-columns:1fr !important;}
+      .pack-massirou{transform:none !important;}
+    }
   </style>
 </head>
 <body>
@@ -695,7 +699,7 @@
       <p class="section-sub" style="margin:0 auto 56px;color:rgba(255,255,255,.58);">Trois formules en shimaoré pour tous les besoins et tous les budgets.</p>
     </div>
     <div class="section-center">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="packs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
 
         <!-- Pack Karibou -->
         <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:default;" onmouseover="this.style.transform='translateY(-7px)';this.style.boxShadow='0 24px 56px rgba(30,127,212,.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
@@ -716,7 +720,7 @@
         </div>
 
         <!-- Pack Massirou (recommandé) -->
-        <div style="background:linear-gradient(160deg,rgba(30,127,212,.2),rgba(30,127,212,.08));border:1.5px solid rgba(30,127,212,.5);border-radius:22px;padding:36px 28px;position:relative;overflow:hidden;transform:scale(1.03);transition:transform .3s,box-shadow .3s;cursor:default;" onmouseover="this.style.transform='scale(1.03) translateY(-7px)';this.style.boxShadow='0 24px 56px rgba(30,127,212,.35)'" onmouseout="this.style.transform='scale(1.03) translateY(0)';this.style.boxShadow='none'">
+        <div style="background:linear-gradient(160deg,rgba(30,127,212,.2),rgba(30,127,212,.08));border:1.5px solid rgba(30,127,212,.5);border-radius:22px;padding:36px 28px;position:relative;overflow:hidden;transform:scale(1.03)" class="pack-massirou;transition:transform .3s,box-shadow .3s;cursor:default;" onmouseover="this.style.transform='scale(1.03) translateY(-7px)';this.style.boxShadow='0 24px 56px rgba(30,127,212,.35)'" onmouseout="this.style.transform='scale(1.03) translateY(0)';this.style.boxShadow='none'">
           <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ocean),var(--sun));"></div>
           <div style="position:absolute;top:16px;right:16px;background:var(--ocean);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;">POPULAIRE</div>
           <div style="margin-bottom:16px;height:180px;display:flex;align-items:center;justify-content:center;"><img src="pngwing_com__1_.png" alt="Peugeot 308" style="max-height:170px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(30,127,212,.4)) brightness(0.92);"></div>
