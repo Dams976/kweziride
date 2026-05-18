@@ -64,18 +64,7 @@
     .price-blue{font-weight:800;color:var(--ocean);}
     .price-orange{font-weight:800;color:var(--sun);}
 
-    /* Cards dégression */
-    .degression-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
-    .degression-card{border-radius:20px;padding:24px;border:2px solid var(--fog);}
-    .degression-card.karibou{border-color:rgba(46,204,113,.3);background:rgba(46,204,113,.05);}
-    .degression-card.massirou{border-color:rgba(30,127,212,.3);background:rgba(30,127,212,.05);}
-    .degression-card.masterehi{border-color:rgba(245,130,10,.3);background:rgba(245,130,10,.05);}
-    .dg-title{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--night);margin-bottom:4px;}
-    .dg-sub{font-size:11px;color:var(--muted);margin-bottom:16px;}
-    .dg-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--fog);font-size:13px;}
-    .dg-row:last-child{border-bottom:none;}
-    .dg-km{color:var(--muted);}
-    .dg-price{font-weight:700;}
+
 
     /* Majorations */
     .maj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:48px;}
@@ -190,33 +179,59 @@
       </table>
     </div>
 
-    <!-- Tarification dégressive -->
-    <span class="section-label">Comment c'est calculé</span>
-    <h2 class="section-title">Tarification dégressive au km</h2>
-    <p class="section-sub">Plus ton trajet est long, moins le kilomètre coûte cher. C'est notre façon de rendre les longs trajets accessibles.</p>
+    <!-- Comparatif -->
+    <span class="section-label">Pourquoi KweziRide ?</span>
+    <h2 class="section-title">Ce n'est pas un taxi-brousse.</h2>
+    <p class="section-sub">C'est votre voiture privée, votre chauffeur dédié, votre sécurité. Pour vous et ceux que vous aimez.</p>
 
-    <div class="degression-grid">
-      <div class="degression-card karibou">
-        <div class="dg-title">🟢 Karibou</div>
-        <div class="dg-sub">Prise en charge : 2€ · Min : 6€</div>
-        <div class="dg-row"><span class="dg-km">0 → 20 km</span><span class="dg-price" style="color:#2ECC71;">0,65 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">20 → 40 km</span><span class="dg-price" style="color:#2ECC71;">0,45 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">Au-delà de 40 km</span><span class="dg-price" style="color:#2ECC71;">0,30 €/km</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+
+      <!-- Taxi-brousse -->
+      <div style="background:#f8f9fa;border:2px solid var(--fog);border-radius:20px;padding:28px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="font-size:32px;">🚌</div>
+          <div>
+            <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--muted);">Taxi-brousse</div>
+            <div style="font-size:12px;color:var(--muted);">5 - 6€ par personne</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Serré avec d'autres passagers</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Horaires fixes, pas disponible la nuit</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Chauffeur inconnu, non vérifié</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Pas de suivi GPS</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Prix variable, pas toujours clair</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);"><span style="color:#E8400A;font-weight:700;">✗</span> Clim non garantie</div>
+        </div>
       </div>
-      <div class="degression-card massirou">
-        <div class="dg-title">🔵 Massirou</div>
-        <div class="dg-sub">Prise en charge : 3€ · Min : 10€</div>
-        <div class="dg-row"><span class="dg-km">0 → 20 km</span><span class="dg-price" style="color:var(--ocean);">0,90 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">20 → 40 km</span><span class="dg-price" style="color:var(--ocean);">0,65 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">Au-delà de 40 km</span><span class="dg-price" style="color:var(--ocean);">0,45 €/km</span></div>
+
+      <!-- KweziRide -->
+      <div style="background:var(--night);border:2px solid rgba(245,130,10,.3);border-radius:20px;padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--ocean),var(--sun));"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="font-size:32px;">🚗</div>
+          <div>
+            <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;">KweziRide</div>
+            <div style="font-size:12px;color:var(--sun);">Voiture privée, rien que pour vous</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Voiture rien que pour vous et vos proches</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Disponible 24h/24, 7j/7</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Chauffeur vérifié et noté par les clients</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Suivi GPS en temps réel</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Prix affiché avant de confirmer</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);"><span style="color:#2ECC71;font-weight:700;">✓</span> Climatisation dans tous les véhicules</div>
+        </div>
       </div>
-      <div class="degression-card masterehi">
-        <div class="dg-title">⭐ Masterehi</div>
-        <div class="dg-sub">Prise en charge : 5€ · Min : 18€</div>
-        <div class="dg-row"><span class="dg-km">0 → 20 km</span><span class="dg-price" style="color:var(--sun);">1,40 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">20 → 40 km</span><span class="dg-price" style="color:var(--sun);">1,00 €/km</span></div>
-        <div class="dg-row"><span class="dg-km">Au-delà de 40 km</span><span class="dg-price" style="color:var(--sun);">0,70 €/km</span></div>
-      </div>
+
+    </div>
+
+    <!-- Message rassurant -->
+    <div style="background:linear-gradient(135deg,var(--night),#0d1520);border-radius:20px;padding:32px;text-align:center;margin-bottom:48px;">
+      <div style="font-size:32px;margin-bottom:12px;">🌊</div>
+      <h3 style="font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;color:#fff;margin-bottom:12px;">La différence, c'est la tranquillité.</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;max-width:540px;margin:0 auto;">Vous ne payez pas juste un trajet. Vous payez la sérénité de savoir que votre chauffeur est vérifié, que votre famille peut suivre votre trajet, et que le prix ne changera pas à la dernière minute.</p>
     </div>
 
     <!-- Majorations -->
