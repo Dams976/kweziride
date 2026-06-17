@@ -15,6 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--night);flex-shrink:0;}
+    .icon-badge i{font-size:18px;color:#fff;}
+    .icon-badge.accent{background:var(--sun);}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
     :root{--ocean:#1E7FD4;--ocean-deep:#155fa0;--sun:#F5820A;--sun-light:#FFF0DC;--coral:#E8400A;--night:#0A0A0A;--muted:#4A5A6E;--fog:#E2EAF4;--white:#FAFCFF;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -90,6 +95,7 @@
     gtag('js', new Date());
     gtag('config', 'G-7T43LNRGLG');
   </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css">
 </head>
 <body>
   <nav>
@@ -101,7 +107,7 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <div class="hero-badge">🚗 Rejoins la flotte</div>
+      <div class="hero-badge"><i class="ti ti-car"></i> Rejoins la flotte</div>
       <h1 class="hero-title">Toi au volant,<br><em>toi qui décides.</em></h1>
       <p class="hero-sub">Deviens chauffeur KweziRide — inscription gratuite, horaires libres, revenus transparents. L'aventure commence à Mayotte.</p>
     </div>
@@ -111,12 +117,12 @@
     <span class="section-label">Pourquoi nous rejoindre</span>
     <h2 class="section-title">Les avantages chauffeur KweziRide</h2>
     <div class="perks-grid">
-      <div class="perk-card"><div class="perk-icon">🕐</div><div class="perk-title">Horaires 100% libres</div><div class="perk-desc">Matin, soir, week-end — tu travailles quand tu veux, autant que tu veux.</div></div>
-      <div class="perk-card"><div class="perk-icon">💵</div><div class="perk-title">Revenus transparents</div><div class="perk-desc">Tu sais exactement ce que tu gagnes sur chaque course. Aucune mauvaise surprise.</div></div>
-      <div class="perk-card"><div class="perk-icon">📲</div><div class="perk-title">App simple en français</div><div class="perk-desc">Interface intuitive, conçue pour être facile à prendre en main dès le premier jour.</div></div>
-      <div class="perk-card"><div class="perk-icon">🤝</div><div class="perk-title">Équipe locale</div><div class="perk-desc">Tu n'es pas seul — notre équipe mahoraise est là pour t'accompagner à chaque étape.</div></div>
-      <div class="perk-card"><div class="perk-icon">🎓</div><div class="perk-title">Inscription gratuite</div><div class="perk-desc">Pas de frais d'entrée. Tu t'inscris, on vérifie ton dossier, et tu commences.</div></div>
-      <div class="perk-card"><div class="perk-icon">🌊</div><div class="perk-title">Première plateforme mahoraise</div><div class="perk-desc">Fais partie des pionniers — rejoins la première plateforme VTC de Mayotte.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-clock"></i></div><div class="perk-title">Horaires 100% libres</div><div class="perk-desc">Matin, soir, week-end — tu travailles quand tu veux, autant que tu veux.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-cash"></i></div><div class="perk-title">Revenus transparents</div><div class="perk-desc">Tu sais exactement ce que tu gagnes sur chaque course. Aucune mauvaise surprise.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-device-mobile"></i></div><div class="perk-title">App simple en français</div><div class="perk-desc">Interface intuitive, conçue pour être facile à prendre en main dès le premier jour.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-users"></i></div><div class="perk-title">Équipe locale</div><div class="perk-desc">Tu n'es pas seul — notre équipe mahoraise est là pour t'accompagner à chaque étape.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-user-plus"></i></div><div class="perk-title">Inscription gratuite</div><div class="perk-desc">Pas de frais d'entrée. Tu t'inscris, on vérifie ton dossier, et tu commences.</div></div>
+      <div class="perk-card"><div class="perk-icon"><i class="ti ti-anchor"></i></div><div class="perk-title">Première plateforme mahoraise</div><div class="perk-desc">Fais partie des pionniers — rejoins la première plateforme VTC de Mayotte.</div></div>
     </div>
 
     <div class="steps-block">
@@ -131,8 +137,8 @@
       <div class="cta-title">Prêt à rejoindre KweziRide ?</div>
       <p class="cta-sub">Contacte-nous maintenant — l'inscription est rapide, gratuite, et tu peux commencer très vite.</p>
       <div class="btn-group">
-        <a href="#tally-open=68x1Rk&tally-layout=modal&tally-width=390&tally-align-left=1&tally-emoji-animation=head-shake" class="btn-primary">🚗 Postuler maintenant</a>
-        <a href="https://wa.me/262639594307" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+        <a href="#tally-open=68x1Rk&tally-layout=modal&tally-width=390&tally-align-left=1&tally-emoji-animation=head-shake" class="btn-primary"><i class="ti ti-car"></i> Postuler maintenant</a>
+        <a href="https://wa.me/262639594307" target="_blank" class="btn-whatsapp"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
   </div>

@@ -15,6 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--night);flex-shrink:0;}
+    .icon-badge i{font-size:18px;color:#fff;}
+    .icon-badge.accent{background:var(--sun);}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
     :root{--ocean:#1E7FD4;--sun:#F5820A;--coral:#E8400A;--night:#0A0A0A;--white:#FAFCFF;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--night);color:var(--white);overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;}
@@ -56,6 +61,7 @@
     .quick-link{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s;}
     .quick-link:hover{color:var(--sun);}
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css">
 </head>
 <body>
 
@@ -68,7 +74,7 @@
   <div class="container">
     <div class="number-404">404</div>
 
-    <div class="car-container">🚗</div>
+    <div class="car-container"><i class="ti ti-car" style="font-size:48px;"></i></div>
 
     <h1 class="title">Oups, cette route n'existe pas !</h1>
     <p class="subtitle">
@@ -77,8 +83,8 @@
     </p>
 
     <div class="btns">
-      <a href="index.html" class="btn-primary">🏠 Retour à l'accueil</a>
-      <a href="contact.html" class="btn-secondary">💬 Nous contacter</a>
+      <a href="index.html" class="btn-primary"><i class="ti ti-home"></i> Retour à l'accueil</a>
+      <a href="contact.html" class="btn-secondary"><i class="ti ti-message-circle"></i> Nous contacter</a>
     </div>
 
     <div class="quick-links">

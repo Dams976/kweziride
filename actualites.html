@@ -39,6 +39,11 @@
   </script>
 
   <style>
+    .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--night);flex-shrink:0;}
+    .icon-badge i{font-size:18px;color:#fff;}
+    .icon-badge.accent{background:var(--sun);}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
     :root{--ocean:#1E7FD4;--ocean-deep:#155fa0;--sun:#F5820A;--sun-light:#FFF0DC;--coral:#E8400A;--night:#0A0A0A;--muted:#4A5A6E;--fog:#E2EAF4;--white:#FAFCFF;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -105,6 +110,7 @@
 
     @media(max-width:768px){.article-featured{grid-template-columns:1fr;}.articles-grid{grid-template-columns:1fr;}.content{padding:60px 5%;}}
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css">
 </head>
 <body>
 
@@ -117,7 +123,7 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <div class="hero-badge">📰 Actualités</div>
+      <div class="hero-badge"><i class="ti ti-news"></i> Actualités</div>
       <h1 class="hero-title">Les dernières nouvelles<br>de <em>KweziRide</em></h1>
       <p class="hero-sub">Suivez l'aventure de la première plateforme VTC de Mayotte — les coulisses, les annonces et les prochaines étapes.</p>
     </div>
@@ -127,7 +133,7 @@
 
     <!-- Article principal -->
     <div class="article-featured" onclick="openModal('article1')" style="cursor:pointer;">
-      <div class="article-img">🚗</div>
+      <div class="article-img"><i class="ti ti-car" style="font-size:48px;"></i></div>
       <div>
         <div class="article-tag">Lancement</div>
         <h2 class="article-title">KweziRide : la première plateforme VTC de Mayotte est là</h2>
@@ -146,7 +152,7 @@
     <div class="articles-grid">
 
       <div class="article-card" onclick="openModal('article2')" style="cursor:pointer;">
-        <div class="article-card-img">🚗</div>
+        <div class="article-card-img"><i class="ti ti-car" style="font-size:36px;"></i></div>
         <div class="article-card-body">
           <div class="article-card-tag">Chauffeurs</div>
           <h3 class="article-card-title">On recrute les premiers chauffeurs mahorais !</h3>
@@ -161,7 +167,7 @@
       </div>
 
       <div class="article-card" onclick="openModal('article3')" style="cursor:pointer;">
-        <div class="article-card-img">💡</div>
+        <div class="article-card-img"><i class="ti ti-bulb" style="font-size:36px;"></i></div>
         <div class="article-card-body">
           <div class="article-card-tag">Notre histoire</div>
           <h3 class="article-card-title">L'histoire derrière KweziRide — né à Sohoa, fait pour Mayotte</h3>
@@ -181,7 +187,7 @@
   <!-- Modal Article 1 -->
   <div class="modal-overlay" id="modal-article1" onclick="if(event.target===this)closeModal('article1')">
     <div class="modal-inner">
-      <button class="modal-close" onclick="closeModal('article1')">✕</button>
+      <button class="modal-close" onclick="closeModal('article1')"><i class="ti ti-x"></i></button>
       <div class="modal-tag">Lancement</div>
       <h2 class="modal-title">KweziRide : la première plateforme VTC de Mayotte est là</h2>
       <div class="modal-meta">1 avril 2026 · 3 min de lecture · Par AHAMADI Ben-Dammane</div>
@@ -194,7 +200,7 @@
         <p>Trois formules sont en cours de lancement : <strong>Karibou</strong> pour les trajets du quotidien, <strong>Massirou</strong> pour un confort climatisé, et <strong>Masterehi</strong> pour les occasions qui méritent l'excellence. Le recrutement des chauffeurs partenaires est ouvert dès maintenant.</p>
         <h3>La suite</h3>
         <p>KweziRide est actuellement en phase de lancement. L'application mobile est en développement et sera bientôt disponible. En attendant, tu peux déjà rejoindre la communauté et t'inscrire comme chauffeur partenaire.</p>
-        <p><strong>Mayotte, ton VTC est là. 🌊</strong></p>
+        <p><strong>Mayotte, ton VTC est là.</strong></p>
       </div>
     </div>
   </div>
@@ -202,7 +208,7 @@
   <!-- Modal Article 2 -->
   <div class="modal-overlay" id="modal-article2" onclick="if(event.target===this)closeModal('article2')">
     <div class="modal-inner">
-      <button class="modal-close" onclick="closeModal('article2')">✕</button>
+      <button class="modal-close" onclick="closeModal('article2')"><i class="ti ti-x"></i></button>
       <div class="modal-tag">Chauffeurs</div>
       <h2 class="modal-title">On recrute les premiers chauffeurs mahorais !</h2>
       <div class="modal-meta">1 avril 2026 · 2 min de lecture · Par AHAMADI Ben-Dammane</div>
@@ -215,7 +221,7 @@
         <p>Pour rejoindre KweziRide, tu dois avoir un permis de conduire valide, un véhicule en bon état avec assurance à jour, et résider à Mayotte. C'est tout.</p>
         <h3>Comment s'inscrire ?</h3>
         <p>Rends-toi sur la page <a href="recrutement.html" style="color:var(--ocean);font-weight:700;">Recrutement</a> de notre site, remplis le formulaire, et notre équipe te contacte rapidement.</p>
-        <p><strong>Rejoins les pionniers de KweziRide. 🚗</strong></p>
+        <p><strong>Rejoins les pionniers de KweziRide.</strong></p>
       </div>
     </div>
   </div>
@@ -223,7 +229,7 @@
   <!-- Modal Article 3 -->
   <div class="modal-overlay" id="modal-article3" onclick="if(event.target===this)closeModal('article3')">
     <div class="modal-inner">
-      <button class="modal-close" onclick="closeModal('article3')">✕</button>
+      <button class="modal-close" onclick="closeModal('article3')"><i class="ti ti-x"></i></button>
       <div class="modal-tag">Notre histoire</div>
       <h2 class="modal-title">L'histoire derrière KweziRide — né à Sohoa, fait pour Mayotte</h2>
       <div class="modal-meta">1 avril 2026 · 4 min de lecture · Par AHAMADI Ben-Dammane</div>
@@ -239,7 +245,7 @@
         <p><strong>Kwezi</strong> — en shimaoré, c'est une façon de dire bonjour de manière polie et respectueuse. C'est exactement l'esprit qu'on veut donner à ce service : accueillir chaque passager et chaque chauffeur avec respect, chaleur et professionnalisme.</p>
         <h3>La vision</h3>
         <p>KweziRide n'est qu'un début. L'objectif c'est de construire la plateforme de mobilité de référence à Mayotte — avec une vraie application, des chauffeurs partenaires sur toute l'île, et un service qui grandit avec notre communauté.</p>
-        <p><strong>Mayotte se prend en main. 🚗</strong></p>
+        <p><strong>Mayotte se prend en main.</strong></p>
       </div>
     </div>
   </div>

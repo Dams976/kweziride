@@ -15,6 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--night);flex-shrink:0;}
+    .icon-badge i{font-size:18px;color:#fff;}
+    .icon-badge.accent{background:var(--sun);}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
     :root{--ocean:#1E7FD4;--ocean-deep:#155fa0;--sun:#F5820A;--sun-light:#FFF0DC;--coral:#E8400A;--night:#0A0A0A;--muted:#4A5A6E;--fog:#E2EAF4;--white:#FAFCFF;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -86,6 +91,7 @@
     gtag('js', new Date());
     gtag('config', 'G-7T43LNRGLG');
   </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css">
 </head>
 <body>
   <nav>
@@ -97,7 +103,7 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <div class="hero-badge">💬 On est là</div>
+      <div class="hero-badge"><i class="ti ti-message-circle"></i> On est là</div>
       <h1 class="hero-title">Contacte<br><em>KweziRide</em></h1>
       <p class="hero-sub">Une question, une suggestion, tu veux rejoindre la flotte ? On te répond rapidement.</p>
     </div>
@@ -107,7 +113,7 @@
     <div class="contact-grid">
       <div class="contact-cards">
         <div class="contact-card">
-          <div class="cc-icon email">📧</div>
+          <div class="cc-icon email"><i class="ti ti-mail"></i></div>
           <div>
             <div class="cc-label">Email</div>
             <a href="/cdn-cgi/l/email-protection#2948414844484d404b4c474d48444448474c694e44484045074a4644"><div class="cc-value"><span class="__cf_email__" data-cfemail="fb9a939a969a9f92999e959f9a96969a959ebb9c969a9297d5989496">[email&#160;protected]</span></div></a>
@@ -115,7 +121,7 @@
           </div>
         </div>
         <div class="contact-card">
-          <div class="cc-icon phone">📞</div>
+          <div class="cc-icon phone"><i class="ti ti-phone"></i></div>
           <div>
             <div class="cc-label">Téléphone</div>
             <a href="tel:+262639594307"><div class="cc-value">+262 639 59 43 07</div></a>
@@ -133,7 +139,7 @@
           </div>
         </div>
         <div class="contact-card">
-          <div class="cc-icon address">📍</div>
+          <div class="cc-icon address"><i class="ti ti-map-pin"></i></div>
           <div>
             <div class="cc-label">Adresse</div>
             <div class="cc-value">15 Rue de l'Ancien Dispensaire</div>
