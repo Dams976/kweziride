@@ -4,9 +4,22 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>À propos — KweziRide</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--night);flex-shrink:0;}
+    .icon-badge i{font-size:18px;color:#fff;}
+    .icon-badge.accent{background:var(--sun);}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
     :root{--ocean:#1E7FD4;--ocean-deep:#155fa0;--sun:#F5820A;--sun-light:#FFF0DC;--coral:#E8400A;--night:#0A0A0A;--muted:#4A5A6E;--fog:#E2EAF4;--white:#FAFCFF;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -61,6 +74,27 @@
 
     @media(max-width:768px){.values-grid{grid-template-columns:1fr;}.founder-card{flex-direction:column;}.content{padding:60px 5%;}}
   </style>
+
+  <!-- SEO -->
+  <meta name="description" content="L'histoire derrière KweziRide — créé par AHAMADI Ben-Dammane et Safina, co-fondateurs mahorais. Un projet né dans une barge, construit avec passion pour Mayotte.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kweziride.yt/apropos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kweziride.yt/apropos.html">
+  <meta property="og:title" content="À propos — KweziRide, né à Sohoa, fait pour Mayotte">
+  <meta property="og:description" content="L'histoire derrière KweziRide — créé par AHAMADI Ben-Dammane et Safina, co-fondateurs mahorais. Un projet né dans une barge, construit avec passion pour Mayotte.">
+  <meta property="og:image" content="https://kweziride.yt/ChatGPT_Image_1_mars_2026__21_18_18.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="KweziRide">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T43LNRGLG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7T43LNRGLG');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.33.0/dist/tabler-icons.min.css">
 </head>
 <body>
   <nav>
@@ -72,7 +106,7 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <div class="hero-badge">🌊 Notre histoire</div>
+      <div class="hero-badge"><i class="ti ti-anchor"></i> Notre histoire</div>
       <h1 class="hero-title">Né à Mayotte,<br><em>fait pour les Mahorais.</em></h1>
       <p class="hero-sub">KweziRide est une initiative locale qui croit que chaque habitant de l'île mérite un transport digne, sûr et abordable.</p>
     </div>
@@ -93,17 +127,17 @@
       <h2 class="section-title">Ce en quoi on croit</h2>
       <div class="values-grid">
         <div class="value-card">
-          <div class="value-icon">🌊</div>
+          <div class="value-icon"><i class="ti ti-anchor"></i></div>
           <div class="value-title">Local d'abord</div>
           <div class="value-desc">KweziRide est créé par un Mahorais, pour les Mahorais. Chaque décision est prise en pensant à notre île.</div>
         </div>
         <div class="value-card">
-          <div class="value-icon">🛡️</div>
+          <div class="value-icon"><i class="ti ti-shield-check"></i></div>
           <div class="value-title">Sécurité avant tout</div>
           <div class="value-desc">Chaque chauffeur est vérifié. Chaque trajet est tracé. La confiance n'est pas une option, c'est notre fondation.</div>
         </div>
         <div class="value-card">
-          <div class="value-icon">🤝</div>
+          <div class="value-icon"><i class="ti ti-users"></i></div>
           <div class="value-title">Communauté</div>
           <div class="value-desc">On construit KweziRide avec les chauffeurs et les passagers mahorais. Ensemble, pas pour eux.</div>
         </div>
@@ -126,7 +160,7 @@
     <div class="cta-block">
       <div class="cta-title">Rejoins l'aventure KweziRide</div>
       <p class="cta-sub">Que tu sois passager ou chauffeur, tu fais partie de cette histoire.<br>Ensemble, on construit la mobilité de demain à Mayotte.</p>
-      <a href="index.html#download" class="btn-primary">📱 Télécharger l'application</a>
+      <a href="index.html#download" class="btn-primary"><i class="ti ti-download"></i> Télécharger l'application</a>
     </div>
 
   </div>
