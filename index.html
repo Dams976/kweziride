@@ -211,7 +211,7 @@
     }
     .booking-btn:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(30,127,212,.45); }
     .booking-suggestions {
-      position:absolute; top:calc(100% + 4px); left:0; right:0; z-index:50;
+      position:fixed; z-index:9999;
       background:#11131a; border:1px solid rgba(255,255,255,.14); border-radius:12px;
       max-height:200px; overflow-y:auto; display:none; box-shadow:0 12px 28px rgba(0,0,0,.4);
     }
@@ -1268,6 +1268,10 @@
               };
               suggBox.appendChild(item);
             });
+            var fieldRect = inputEl.closest('.booking-field').getBoundingClientRect();
+            suggBox.style.top = (fieldRect.bottom + 6) + 'px';
+            suggBox.style.left = fieldRect.left + 'px';
+            suggBox.style.width = fieldRect.width + 'px';
             suggBox.classList.add('active');
           })
           .catch(function() { suggBox.classList.remove('active'); });
