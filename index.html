@@ -547,6 +547,15 @@
 </head>
 <body>
 
+  <!-- Bannière lancement -->
+  <div class="launch-banner" id="launch-banner">
+    <div class="launch-banner-dot"></div>
+    <div class="launch-banner-text">
+      🚗 KweziRide arrive très bientôt à Mayotte — Le service n'est pas encore actif. Les réservations ouvriront dans les prochaines semaines. Reste connecté !
+    </div>
+    <button class="launch-banner-close" onclick="document.getElementById('launch-banner').style.display='none'" title="Fermer">✕</button>
+  </div>
+
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
@@ -1345,5 +1354,14 @@
       s.style.cssText = 'width:' + size + 'px;height:' + size + 'px;top:' + (Math.random()*100) + '%;left:' + (Math.random()*100) + '%;animation-delay:' + (Math.random()*4) + 's;animation-duration:' + (2+Math.random()*3) + 's;';
       container.appendChild(s);
     }
+
+    // Ajuster le padding-top pour la bannière
+    window.addEventListener('load', function() {
+      var banner = document.getElementById('launch-banner');
+      if (banner) {
+        var h = banner.offsetHeight;
+        document.querySelector('nav').style.top = h + 'px';
+      }
+    });
   </script></body>
 </html>
