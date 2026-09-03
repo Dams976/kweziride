@@ -15,7 +15,7 @@
 
 
   <!-- SEO -->
-  <meta name="description" content="KweziRide — La première plateforme VTC de Mayotte. Commande ton trajet en quelques clics avec un chauffeur mahorais vérifié. Disponible sur toute l'île.">
+  <meta name="description" content="KweziRide — La première plateforme VTC de Mayotte. Lancement imminent à Mayotte. Rejoins la communauté dès maintenant — chauffeurs et passagers bienvenus.">
   <meta name="keywords" content="VTC Mayotte, taxi Mayotte, transport Mamoudzou, chauffeur Mayotte, Koungou, Sada, Bouéni, KweziRide, covoiturage Mayotte">
   <meta name="author" content="KweziRide — AHAMADI Ben-Dammane">
   <meta name="robots" content="index, follow">
@@ -551,9 +551,9 @@
   <div class="launch-banner" id="launch-banner">
     <div class="launch-banner-dot"></div>
     <div class="launch-banner-text">
-      🚗 KweziRide arrive très bientôt à Mayotte — Le service n'est pas encore actif. Les réservations ouvriront dans les prochaines semaines. Reste connecté !
+      <i class="ti ti-car"></i> KweziRide arrive très bientôt à Mayotte — Le service n'est pas encore actif. Les réservations ouvriront dans les prochaines semaines. Reste connecté !
     </div>
-    <button class="launch-banner-close" onclick="document.getElementById('launch-banner').style.display='none'" title="Fermer">✕</button>
+    <button class="launch-banner-close" onclick="document.getElementById('launch-banner').style.display='none'" title="Fermer"><i class="ti ti-x"></i></button>
   </div>
 
   <!-- NAV -->
@@ -568,7 +568,7 @@
       <li><a href="#passagers">Passagers</a></li>
       <li><a href="#chauffeurs">Chauffeurs</a></li>
     </ul>
-    <a href="#download" class="nav-cta">Télécharger</a>
+    <a href="#download" class="nav-cta" style="background:rgba(245,130,10,.2);border:1px solid var(--sun);color:var(--sun);"><i class="ti ti-clock"></i> Bientôt disponible</a>
   </nav>
 
   <!-- HERO -->
@@ -586,7 +586,7 @@
           Où que tu sois sur l'île, un chauffeur mahorais est près de toi.
         </p>
         <div class="booking-widget">
-          <div class="booking-widget-title"><i class="ti ti-car"></i> Commander une course</div>
+          <div class="booking-widget-title"><i class="ti ti-clock"></i> Commandes bientôt disponibles</div>
           <div id="pack-indicator" style="display:none;background:rgba(245,130,10,.12);border:1px solid rgba(245,130,10,.3);border-radius:10px;padding:8px 12px;margin-bottom:12px;display:none;align-items:center;justify-content:space-between;">
             <span style="font-size:13px;font-weight:700;color:var(--sun);" id="pack-indicator-text">Pack Karibou</span>
             <button onclick="clearPack()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.4);font-size:16px;padding:0 4px;"><i class="ti ti-x"></i></button>
@@ -619,7 +619,7 @@
             <button onclick="clearPack()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.4);font-size:12px;font-weight:600;"><i class="ti ti-x"></i> Changer</button>
           </div>
           <button class="booking-btn" onclick="getPriceEstimate()">
-            <i class="ti ti-wallet"></i> Voir les prix disponibles
+            <i class="ti ti-wallet"></i> Voir les prix
           </button>
           <div id="price-results" style="display:none;margin-top:14px;"></div>
         </div>
@@ -791,7 +791,7 @@
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:#2ECC71;"><i class="ti ti-check"></i></span> Climatisation incluse</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:#2ECC71;"><i class="ti ti-check"></i></span> Suivi GPS en temps réel</div>
           </div>
-          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.3);color:#2ECC71;font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='rgba(46,204,113,.25)'" onmouseout="this.style.background='rgba(46,204,113,.15)'" onclick="selectPack('Karibou');return false;">Choisir Karibou</a>
+          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.3);color:#2ECC71;font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='rgba(46,204,113,.25)'" onmouseout="this.style.background='rgba(46,204,113,.15)'" onclick="selectPack('Karibou');return false;"><i class="ti ti-clock"></i> Bientôt disponible</a>
         </div>
 
         <!-- Pack Massirou (recommandé) -->
@@ -809,7 +809,7 @@
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:var(--ocean);"><i class="ti ti-check"></i></span> Confort garanti</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:var(--ocean);"><i class="ti ti-check"></i></span> Suivi GPS en temps réel</div>
           </div>
-          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:var(--ocean);color:#fff;font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='var(--ocean-deep)'" onmouseout="this.style.background='var(--ocean)'" onclick="selectPack('Massirou');return false;">Choisir Massirou</a>
+          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:var(--ocean);color:#fff;font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='var(--ocean-deep)'" onmouseout="this.style.background='var(--ocean)'" onclick="selectPack('Massirou');return false;"><i class="ti ti-clock"></i> Bientôt disponible</a>
         </div>
 
         <!-- Pack Masterehi -->
@@ -827,7 +827,7 @@
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:var(--sun);"><i class="ti ti-check"></i></span> Idéal aéroport & business</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);"><span style="color:var(--sun);"><i class="ti ti-check"></i></span> Suivi GPS en temps réel</div>
           </div>
-          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:rgba(245,130,10,.15);border:1px solid rgba(245,130,10,.3);color:var(--sun);font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='rgba(245,130,10,.25)'" onmouseout="this.style.background='rgba(245,130,10,.15)'" onclick="selectPack('Masterehi');return false;">Choisir Masterehi</a>
+          <a href="#download" style="display:block;text-align:center;padding:13px;border-radius:12px;background:rgba(245,130,10,.15);border:1px solid rgba(245,130,10,.3);color:var(--sun);font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='rgba(245,130,10,.25)'" onmouseout="this.style.background='rgba(245,130,10,.15)'" onclick="selectPack('Masterehi');return false;"><i class="ti ti-clock"></i> Bientôt disponible</a>
         </div>
 
       </div>
@@ -854,7 +854,7 @@
           </div>
           <div class="avantage-item">
             <div class="av-icon"><i class="ti ti-map"></i></div>
-            <div><div class="av-title">Tout Mayotte couvert</div><div class="av-desc">Mamoudzou, Koungou, Bandraboua, Bouéni… KweziRide est disponible partout sur l'île.</div></div>
+            <div><div class="av-title">Tout Mayotte couvert</div><div class="av-desc">Mamoudzou, Koungou, Bandraboua, Bouéni… KweziRide sera disponible partout sur l'île dès le lancement.</div></div>
           </div>
         </div>
       </div>
@@ -869,9 +869,9 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon"><i class="ti ti-anchor"></i></div>
-          <div><div class="stat-num">Mayotte</div><div class="stat-label">Service disponible sur toute l'île</div></div>
+          <div><div class="stat-num">Mayotte</div><div class="stat-label">Service bientôt disponible sur toute l'île</div></div>
         </div>
-        <button onclick="installPWA()" class="btn-primary" style="justify-content:center;margin-top:8px;border:none;cursor:pointer;"><i class="ti ti-download"></i> Télécharger KweziRide — Gratuit</button>
+        <button onclick="installPWA()" class="btn-primary" style="justify-content:center;margin-top:8px;border:none;cursor:pointer;"><i class="ti ti-clock"></i> Lancement imminent — Reste connecté !</button>
       </div>
     </div>
   </section>
@@ -1005,7 +1005,7 @@
 
   <!-- DOWNLOAD -->
   <section id="download">
-    <h2 class="section-title" style="font-size:clamp(22px,3vw,38px);position:relative;color:var(--white);">KweziRide est disponible maintenant</h2>
+    <h2 class="section-title" style="font-size:clamp(22px,3vw,38px);position:relative;color:var(--white);">KweziRide arrive très bientôt</h2>
     <p>Télécharge l'app, crée ton compte en 2 minutes et commande ton premier trajet.<br>L'appli VTC de Mayotte — simple, locale, fiable.</p>
     <div class="download-btns">
       <button onclick="installPWA()" class="store-btn" style="border:none;cursor:pointer;">
@@ -1013,7 +1013,7 @@
           <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-127.4C46.7 790.7 0 663 0 541.8c0-207.9 135.4-318 268.5-318 71.2 0 130.4 46.8 174.9 46.8 42.8 0 109.8-49.7 188.5-49.7 30.5 0 130.3 2.6 198.3 99zM554.1 158.4c31.8-37.9 54.4-90.6 54.4-143.3 0-7.7-.6-15.4-1.9-21.7-51.4 1.9-112.9 34.4-149.4 77.3-28.5 32.5-55.1 85.2-55.1 138.6 0 8.3 1.3 16.6 1.9 19.2 3.2.6 8.3 1.3 13.4 1.3 46.1 0 103.1-30.9 136.7-71.4z"/>
         </svg>
         <div>
-          <div class="store-sub">Télécharger sur</div>
+          <div class="store-sub">Disponible bientôt sur</div>
           <div class="store-name">iOS</div>
         </div>
       </button>
@@ -1023,7 +1023,7 @@
           <path d="M7 18.2c0 .44.36.8.8.8h1.2v4a1.5 1.5 0 0 0 3 0v-4h2v4a1.5 1.5 0 0 0 3 0v-4h1.2c.44 0 .8-.36.8-.8V18H7v.2zM5.5 18a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 3 0v-5A1.5 1.5 0 0 0 5.5 18zm21 0a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 3 0v-5A1.5 1.5 0 0 0 26.5 18z" fill="#78C257"/>
         </svg>
         <div>
-          <div class="store-sub">Télécharger sur</div>
+          <div class="store-sub">Disponible bientôt sur</div>
           <div class="store-name">Android</div>
         </div>
       </button>
@@ -1118,7 +1118,7 @@
           <li><a href="tarifs.html">Nos tarifs</a></li>
           <li><a href="#passagers">Pour les passagers</a></li>
           <li><a href="#chauffeurs">Pour les chauffeurs</a></li>
-          <li><a href="#download">Télécharger</a></li>
+          <li><a href="#download">Lancement imminent</a></li>
         </ul>
       </div>
       <div class="footer-col">
